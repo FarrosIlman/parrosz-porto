@@ -117,7 +117,7 @@ export default function Portfolio() {
       githubUrl: "#",
     },
     {
-      title: "Web Design Competition Entry",
+      title: "",
       description:
         "Creative and responsive web design created for city-level competition. Focused on aesthetics, navigation flow, and user experience principles with modern design trends.",
       image: "/placeholder.svg?height=300&width=500",
