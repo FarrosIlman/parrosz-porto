@@ -732,7 +732,7 @@ export default function Portfolio() {
                     <FileCode className="w-8 h-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Programming Languages</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">JavaScript, Kotlin, PHP, Java</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">JavaScript, Kotlin, PHP, Java, TypeScript</p>
                 </div>
 
                 <div className="text-center">
@@ -741,7 +741,7 @@ export default function Portfolio() {
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Frameworks & Tools</h3>
                   <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Laravel, Bootstrap, CodeIgniter, Android Studio, Visual Studio Code
+                    Laravel, Next.js, Bootstrap, CodeIgniter, Android Studio, Visual Studio Code
                   </p>
                 </div>
 
