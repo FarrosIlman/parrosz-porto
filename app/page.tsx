@@ -532,7 +532,7 @@ export default function Portfolio() {
               <Card>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4 mb-6">
-                    <User className="w-8 h-8 text-blue-600 mt-1" />
+                    <User className="w-14 h-8 text-blue-600 mt-1" />
                     <div>
                       <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                         Junior Front-End Web Developer dan Android Developer dengan pengalaman membangun aplikasi web
