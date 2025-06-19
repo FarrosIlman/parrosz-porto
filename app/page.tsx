@@ -43,7 +43,7 @@ export default function Portfolio() {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
 
-  
+  const [showBackToTop, setShowBackToTop] = useState(false)
 
   const projects = [
     {
@@ -151,6 +151,15 @@ export default function Portfolio() {
     }
   }, [darkMode])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const getSkillIcon = (skill: string) => {
     const iconMap: { [key: string]: JSX.Element } = {
       JavaScript: <FileCode className="w-6 h-6 text-white" />,
@@ -256,6 +265,13 @@ export default function Portfolio() {
   ]
 
   const projectCategories = ["All", "Web Development", "Mobile Development", "Desktop Development", "Web Design"]
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? "dark" : ""}`}>
@@ -978,6 +994,21 @@ export default function Portfolio() {
             </motion.div>
           </div>
         </section>
+
+        {/* Floating Back to Top Button */}
+        {showBackToTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            onClick={scrollToTop}
+            className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <ChevronDown className="w-6 h-6 transform rotate-180 group-hover:-translate-y-1 transition-transform duration-300" />
+          </motion.button>
+        )}
 
         {/* Footer */}
         <footer className="py-8 bg-gray-900 text-white">
