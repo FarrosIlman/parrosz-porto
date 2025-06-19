@@ -232,7 +232,7 @@ export default function Portfolio() {
       period: "Dec 2019 - Feb 2020",
       location: "Pekalongan, Indonesia",
       description:
-        "Contributed to Point of Sale (PoS) desktop application development using Java Swing with PostgreSQL/MySQL integration.",
+        "Contributed to Point of Sale (PoS) desktop application development using Java with PostgreSQL/MySQL integration.",
       technologies: ["Java", "Java Swing", "PostgreSQL", "MySQL"],
     },
   ]
