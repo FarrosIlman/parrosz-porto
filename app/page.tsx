@@ -39,7 +39,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 
 export default function Portfolio() {
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(false)
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
 
@@ -47,11 +47,53 @@ export default function Portfolio() {
 
   const projects = [
     {
+      title: "Landing Page for Funvita Indonesia",
+      description:
+        "A landing page created as part of an internship test to introduce and highlight the company’s core business development services. Focused on clear service presentation, modern and responsive design, and accessibility for potential clients across various devices.",
+      image: "/images/projects/funvita.png",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      category: "Web Design",
+      duration: "2 days",
+      teamSize: "Individual Project",
+      status: "Deployed",
+      highlights: ["Modern Design", "Responsive Layout", "Client Satisfaction"],
+      demoUrl: "https://funvita.vercel.app",
+      githubUrl: "https://github.com/FarrosIlman/LandingPage-Funvita.git",
+    },
+    {
+      title: "StoryU Application",
+      description:
+        "StoryU is a mobile application designed to help users manage their daily tasks and stories. It features a user-friendly interface, task management system, and integration with REST APIs for data synchronization.",
+      image: "/images/projects/StoryU-Login.png",
+      technologies: ["Kotlin", "REST API", "Material Design", "UI/UX Design", "CameraX"],
+      category: "Mobile Development",
+      duration: "1 month",
+      teamSize: "Individual Project",
+      status: "Completed",
+      highlights: ["User-Centric Design", "Task Management", "REST API Integration"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/FarrosIlman/StoryU.git",
+    },
+    {
+      title: "Landing Page Sinar Abadi Property",
+      description:
+        "Sinar Abadi Property Landing page showcasing property listings and company profile. Built with responsive design, real-time location, and modern web practices as part of an academic project.",
+      image: "/images/projects/sinarabadi.png",
+      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX"],
+      category: "Web Development",
+      duration: "1 week",
+      teamSize: "4 members",
+      status: "Deployed",
+      highlights: ["Responsive Design", "UI/UX Focus", "Team Collaboration"],
+      demoUrl: "https://sinar-abadi-property.vercel.app/",
+      githubUrl: "https://github.com/FarrosIlman/SINAR-ABADI-PROPERTY.git",
+    },
+    {
       title: "Bangkit Academy Capstone Project",
       description:
         "Innovative technology-based solution developed as part of Bangkit Academy program. Achieved Top 50 ranking among all capstone projects with collaborative cross-disciplinary approach.",
       image: "/placeholder.svg?height=300&width=500",
-      technologies: ["Kotlin", "Android Studio", "Firebase", "Machine Learning", "UI/UX Design"],
+      technologies: ["Kotlin", "Android Studio", "Firebase", "Machine Learning", "UI/UX Design", "Cloud Computing"],
       category: "Mobile Development",
       duration: "3 months",
       teamSize: "6 members",
@@ -87,48 +129,6 @@ export default function Portfolio() {
       highlights: ["Client Implementation", "Database Integration", "User Training"],
       demoUrl: "#",
       githubUrl: "#",
-    },
-    {
-      title: "Government Website Interface",
-      description:
-        "Modern and responsive front-end interface for government institution website. Developed using HTML, CSS, JavaScript, and CodeIgniter framework with focus on accessibility and user experience.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["HTML", "CSS", "JavaScript", "CodeIgniter", "Bootstrap", "PHP"],
-      category: "Web Development",
-      duration: "3 months",
-      teamSize: "Development Team",
-      status: "Live",
-      highlights: ["Government Project", "Accessibility Focus", "Team Collaboration"],
-      demoUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "StoryU Application",
-      description:
-        "StoryU is a mobile application designed to help users manage their daily tasks and stories. It features a user-friendly interface, task management system, and integration with REST APIs for data synchronization.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["Kotlin", "REST API", "Material Design", "UI/UX Design", "CameraX"],
-      category: "Mobile Development",
-      duration: "1 month",
-      teamSize: "Individual Project",
-      status: "Completed",
-      highlights: ["User-Centric Design", "Task Management", "REST API Integration",],
-      demoUrl: "#",
-      githubUrl: "https://github.com/FarrosIlman/StoryU.git",
-    },
-    {
-      title: "LandingPage Sinar Abadi Property",
-      description:
-        "Sinar Abadi Property landing page designed to showcase property listings and company information. Focused on responsive design and user-friendly navigation.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX"],
-      category: "Web Development",
-      duration: "2 weeks",
-      teamSize: "4 members",
-      status: "Deployed",
-      highlights: ["Responsive Design", "UI/UX Focus", "Team Collaboration"],
-      demoUrl: "https://sinar-abadi-property.vercel.app/",
-      githubUrl: "https://github.com/FarrosIlman/SINAR-ABADI-PROPERTY.git",
     },
   ]
 
@@ -579,7 +579,7 @@ export default function Portfolio() {
                       <CardTitle>Bachelor of Informatika</CardTitle>
                     </div>
                     <CardDescription>
-                      Universitas Muhammadiyah Pekajangan Pekalongan • Sep 2021 - Apr 2025
+                      Universitas Muhammadiyah Pekajangan Pekalongan • Sep 2021 - Feb 2025
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -811,7 +811,9 @@ export default function Portfolio() {
                       <img
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
-                        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                        className={`w-full h-48 ${
+                          project.image?.includes("StoryU-Login.png") ? "object-contain" : "object-cover"
+                        } transition-transform duration-300 group-hover:scale-105`}
                       />
                       <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                         <Button size="sm" variant="secondary" asChild>
